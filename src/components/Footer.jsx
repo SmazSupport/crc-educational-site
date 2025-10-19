@@ -9,7 +9,7 @@ const Footer = () => {
           <div>
             <h3 className="text-white font-semibold text-lg mb-3">Project Information</h3>
             <p className="text-sm mb-2">
-              <strong>Student:</strong> Mark [Last Name]
+              <strong>Student:</strong> Mark Stevens
             </p>
             <p className="text-sm mb-2">
               <strong>Course:</strong> INF680 - Data Communications
