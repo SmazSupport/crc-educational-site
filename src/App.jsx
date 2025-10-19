@@ -10,7 +10,7 @@ import References from './pages/References';
 
 function App() {
   return (
-    <Router>
+    <Router basename="/crc-educational-site">
       <div className="flex flex-col min-h-screen">
         <Navigation />
         <main className="flex-grow">
