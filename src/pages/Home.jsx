@@ -5,7 +5,7 @@ const Home = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <div style={{background: 'linear-gradient(to bottom right, #0284c7, #075985)'}} className="text-white">
+      <div style={{background: 'linear-gradient(to bottom right, #0d9488, #115e59)'}} className="text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
           <div className="text-center">
             <h1 style={{color: '#ffffff'}} className="text-5xl md:text-6xl font-bold mb-6">
@@ -34,7 +34,7 @@ const Home = () => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 to="/introduction"
-                style={{backgroundColor: '#ffffff', color: '#0369a1'}}
+                style={{backgroundColor: '#ffffff', color: '#0f766e'}}
                 className="inline-flex items-center justify-center px-8 py-3 font-semibold rounded-lg hover:bg-primary-50 transition-colors shadow-md"
               >
                 Get Started
@@ -42,7 +42,7 @@ const Home = () => {
               </Link>
               <Link
                 to="/calculator"
-                style={{backgroundColor: '#0369a1', color: '#ffffff'}}
+                style={{backgroundColor: '#0f766e', color: '#ffffff'}}
                 className="inline-flex items-center justify-center px-8 py-3 font-semibold rounded-lg hover:bg-primary-600 transition-colors border-2 border-white shadow-md"
               >
                 Try CRC Calculator

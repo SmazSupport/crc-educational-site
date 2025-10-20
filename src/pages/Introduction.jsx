@@ -17,7 +17,7 @@ const Introduction = () => {
             </div>
             
             <p className="text-gray-700 mb-4">
-              <strong>Cyclic Redundancy Check (CRC)</strong> is a method used to detect errors in data. 
+              <strong>Cyclic Redundancy Check (CRC)</strong> is a method used to detect errors in data [1]. 
               When we send data over a network or store it on a device, sometimes bits can get flipped 
               or corrupted. CRC helps us figure out if that happened.
             </p>
@@ -46,8 +46,7 @@ const Introduction = () => {
             </div>
             
             <p className="text-gray-700 mb-4">
-              According to our textbook (Stallings, Data and Computer Communications), CRC is one of the 
-              most widely used error detection methods because:
+              CRC is one of the most widely used error detection methods because [1]:
             </p>
 
             <ul className="list-disc list-inside space-y-2 text-gray-700 mb-4">
@@ -119,18 +118,18 @@ const Introduction = () => {
         </section>
 
         {/* Next Steps */}
-        <div style={{background: 'linear-gradient(to right, #0284c7, #0369a1)'}} className="rounded-lg p-8 text-center mb-8 shadow-lg">
+        <div style={{background: 'linear-gradient(to right, #0d9488, #0f766e)'}} className="rounded-lg p-8 text-center mb-8 shadow-lg">
           <h3 style={{color: '#ffffff'}} className="text-2xl font-bold mb-3">Ready to Learn More?</h3>
           <p style={{color: '#ffffff'}} className="mb-6">
             Now that you understand what CRC is, let's see how it actually works!
           </p>
-          <a
-            href="/crc-educational-site/how-it-works"
-            style={{backgroundColor: '#ffffff', color: '#0369a1'}}
+          <Link
+            to="/how-it-works"
+            style={{backgroundColor: '#ffffff', color: '#0f766e'}}
             className="inline-block font-semibold px-8 py-3 rounded-lg hover:bg-primary-50 transition-colors shadow-md"
           >
             Continue to How It Works →
-          </a>
+          </Link>
         </div>
       </div>
     </div>

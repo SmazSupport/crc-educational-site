@@ -21,7 +21,7 @@ const Applications = () => {
             </div>
             
             <p className="text-gray-700 mb-4">
-              Ethernet (IEEE 802.3) uses CRC-32 to check every frame of data sent over the network. 
+              Ethernet (IEEE 802.3) uses CRC-32 to check every frame of data sent over the network [3]. 
               This is the same technology used in your home router and office networks.
             </p>
 
@@ -148,18 +148,18 @@ const Applications = () => {
         </section>
 
         {/* Next Steps */}
-        <div style={{background: 'linear-gradient(to right, #0284c7, #0369a1)'}} className="rounded-lg p-8 text-center mb-8 shadow-lg">
+        <div style={{background: 'linear-gradient(to right, #0d9488, #0f766e)'}} className="rounded-lg p-8 text-center mb-8 shadow-lg">
           <h3 style={{color: '#ffffff'}} className="text-2xl font-bold mb-3">Want to See the Sources?</h3>
           <p style={{color: '#ffffff'}} className="mb-6">
             Check out the references used to create this educational site.
           </p>
-          <a
-            href="/crc-educational-site/references"
-            style={{backgroundColor: '#ffffff', color: '#0369a1'}}
+          <Link
+            to="/references"
+            style={{backgroundColor: '#ffffff', color: '#0f766e'}}
             className="inline-block font-semibold px-8 py-3 rounded-lg hover:bg-primary-50 transition-colors shadow-md"
           >
             View References →
-          </a>
+          </Link>
         </div>
       </div>
     </div>

@@ -1,5 +1,5 @@
 import { Link, useLocation } from 'react-router-dom';
-import { Home, BookOpen, Calculator, FileText, Menu, X } from 'lucide-react';
+import { Home, BookOpen, Calculator, FileText, Menu, X, Cog } from 'lucide-react';
 import { useState } from 'react';
 
 const Navigation = () => {
@@ -9,7 +9,7 @@ const Navigation = () => {
   const navItems = [
     { path: '/', label: 'Home', icon: Home },
     { path: '/introduction', label: 'Introduction', icon: BookOpen },
-    { path: '/how-it-works', label: 'How It Works', icon: BookOpen },
+    { path: '/how-it-works', label: 'How It Works', icon: Cog },
     { path: '/applications', label: 'Applications', icon: FileText },
     { path: '/calculator', label: 'CRC Calculator', icon: Calculator },
     { path: '/references', label: 'References', icon: FileText },

@@ -44,29 +44,6 @@ const References = () => {
           </div>
         </section>
 
-        {/* Back to Home */}
-        <div style={{background: 'linear-gradient(to right, #0284c7, #0369a1)'}} className="rounded-lg p-8 text-center mb-8 shadow-lg">
-          <h3 style={{color: '#ffffff'}} className="text-2xl font-bold mb-3">Finished Exploring?</h3>
-          <p style={{color: '#ffffff'}} className="mb-6">
-            Return to the home page or try the interactive calculator.
-          </p>
-          <div className="flex gap-4 justify-center flex-wrap">
-            <a
-              href="/crc-educational-site/"
-              style={{backgroundColor: '#ffffff', color: '#0369a1'}}
-              className="inline-block font-semibold px-8 py-3 rounded-lg hover:bg-primary-50 transition-colors shadow-md"
-            >
-              ← Back to Home
-            </a>
-            <a
-              href="/crc-educational-site/calculator"
-              style={{backgroundColor: '#ffffff', color: '#0369a1'}}
-              className="inline-block font-semibold px-8 py-3 rounded-lg hover:bg-primary-50 transition-colors shadow-md"
-            >
-              Try Calculator →
-            </a>
-          </div>
-        </div>
       </div>
     </div>
   );
