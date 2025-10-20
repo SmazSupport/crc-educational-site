@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { Wifi, HardDrive, Network } from 'lucide-react';
 
 const Applications = () => {

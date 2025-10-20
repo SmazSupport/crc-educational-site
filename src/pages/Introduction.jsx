@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { BookOpen, Shield } from 'lucide-react';
 
 const Introduction = () => {

@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { Calculator, Binary, CheckCircle } from 'lucide-react';
 
 const HowItWorks = () => {
