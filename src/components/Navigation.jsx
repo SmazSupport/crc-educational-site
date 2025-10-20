@@ -9,7 +9,7 @@ const Navigation = () => {
   const navItems = [
     { path: '/', label: 'Home', icon: Home },
     { path: '/introduction', label: 'Introduction', icon: BookOpen },
-    { path: '/how-it-works', label: 'How It Works', icon: Calculator },
+    { path: '/how-it-works', label: 'How It Works', icon: BookOpen },
     { path: '/applications', label: 'Applications', icon: FileText },
     { path: '/calculator', label: 'CRC Calculator', icon: Calculator },
     { path: '/references', label: 'References', icon: FileText },
@@ -27,7 +27,7 @@ const Navigation = () => {
                 <span className="text-white font-bold text-xl">CRC</span>
               </div>
               <span className="font-bold text-xl text-gray-800 hidden sm:block">
-                Error Checking
+                CRC Learning Hub
               </span>
             </Link>
           </div>

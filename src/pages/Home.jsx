@@ -34,14 +34,16 @@ const Home = () => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 to="/introduction"
-                className="inline-flex items-center justify-center px-8 py-3 bg-white text-primary-700 font-semibold rounded-lg hover:bg-primary-50 transition-colors"
+                style={{backgroundColor: '#ffffff', color: '#0369a1'}}
+                className="inline-flex items-center justify-center px-8 py-3 font-semibold rounded-lg hover:bg-primary-50 transition-colors shadow-md"
               >
                 Get Started
                 <ArrowRight className="ml-2" size={20} />
               </Link>
               <Link
                 to="/calculator"
-                className="inline-flex items-center justify-center px-8 py-3 bg-primary-700 text-white font-semibold rounded-lg hover:bg-primary-600 transition-colors border-2 border-white"
+                style={{backgroundColor: '#0369a1', color: '#ffffff'}}
+                className="inline-flex items-center justify-center px-8 py-3 font-semibold rounded-lg hover:bg-primary-600 transition-colors border-2 border-white shadow-md"
               >
                 Try CRC Calculator
                 <Calculator className="ml-2" size={20} />
