@@ -1,6 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navigation from './components/Navigation';
 import Footer from './components/Footer';
+import ScrollToTop from './components/ScrollToTop';
 import Home from './pages/Home';
 import Introduction from './pages/Introduction';
 import HowItWorks from './pages/HowItWorks';
@@ -11,6 +12,7 @@ import References from './pages/References';
 function App() {
   return (
     <Router basename="/crc-educational-site">
+      <ScrollToTop />
       <div className="flex flex-col min-h-screen">
         <Navigation />
         <main className="flex-grow">
