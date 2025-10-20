@@ -45,21 +45,23 @@ const References = () => {
         </section>
 
         {/* Back to Home */}
-        <div className="bg-gradient-to-r from-primary-600 to-primary-700 rounded-lg p-8 text-center mb-8 shadow-lg">
-          <h3 className="text-2xl font-bold mb-3 text-white">Finished Exploring?</h3>
-          <p className="mb-6 text-white">
+        <div style={{background: 'linear-gradient(to right, #0284c7, #0369a1)'}} className="rounded-lg p-8 text-center mb-8 shadow-lg">
+          <h3 style={{color: '#ffffff'}} className="text-2xl font-bold mb-3">Finished Exploring?</h3>
+          <p style={{color: '#ffffff'}} className="mb-6">
             Return to the home page or try the interactive calculator.
           </p>
           <div className="flex gap-4 justify-center flex-wrap">
             <a
-              href="/"
-              className="inline-block bg-white text-primary-700 font-semibold px-8 py-3 rounded-lg hover:bg-primary-50 transition-colors shadow-md"
+              href="/crc-educational-site/"
+              style={{backgroundColor: '#ffffff', color: '#0369a1'}}
+              className="inline-block font-semibold px-8 py-3 rounded-lg hover:bg-primary-50 transition-colors shadow-md"
             >
               ← Back to Home
             </a>
             <a
-              href="/calculator"
-              className="inline-block bg-white text-primary-700 font-semibold px-8 py-3 rounded-lg hover:bg-primary-50 transition-colors shadow-md"
+              href="/crc-educational-site/calculator"
+              style={{backgroundColor: '#ffffff', color: '#0369a1'}}
+              className="inline-block font-semibold px-8 py-3 rounded-lg hover:bg-primary-50 transition-colors shadow-md"
             >
               Try Calculator →
             </a>

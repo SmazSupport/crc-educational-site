@@ -198,14 +198,15 @@ const HowItWorks = () => {
         </section>
 
         {/* Next Steps */}
-        <div className="bg-gradient-to-r from-primary-600 to-primary-700 rounded-lg p-8 text-center mb-8 shadow-lg">
-          <h3 className="text-2xl font-bold mb-3 text-white">Try It Yourself!</h3>
-          <p className="mb-6 text-white">
+        <div style={{background: 'linear-gradient(to right, #0284c7, #0369a1)'}} className="rounded-lg p-8 text-center mb-8 shadow-lg">
+          <h3 style={{color: '#ffffff'}} className="text-2xl font-bold mb-3">Try It Yourself!</h3>
+          <p style={{color: '#ffffff'}} className="mb-6">
             Use our interactive calculator to see CRC in action with your own data.
           </p>
           <a
-            href="/calculator"
-            className="inline-block bg-white text-primary-700 font-semibold px-8 py-3 rounded-lg hover:bg-primary-50 transition-colors shadow-md"
+            href="/crc-educational-site/calculator"
+            style={{backgroundColor: '#ffffff', color: '#0369a1'}}
+            className="inline-block font-semibold px-8 py-3 rounded-lg hover:bg-primary-50 transition-colors shadow-md"
           >
             Go to Calculator →
           </a>

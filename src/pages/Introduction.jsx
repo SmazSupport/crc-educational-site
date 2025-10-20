@@ -119,14 +119,15 @@ const Introduction = () => {
         </section>
 
         {/* Next Steps */}
-        <div className="bg-gradient-to-r from-primary-600 to-primary-700 rounded-lg p-8 text-center mb-8 shadow-lg">
-          <h3 className="text-2xl font-bold mb-3 text-white">Ready to Learn More?</h3>
-          <p className="mb-6 text-white">
+        <div style={{background: 'linear-gradient(to right, #0284c7, #0369a1)'}} className="rounded-lg p-8 text-center mb-8 shadow-lg">
+          <h3 style={{color: '#ffffff'}} className="text-2xl font-bold mb-3">Ready to Learn More?</h3>
+          <p style={{color: '#ffffff'}} className="mb-6">
             Now that you understand what CRC is, let's see how it actually works!
           </p>
           <a
-            href="/how-it-works"
-            className="inline-block bg-white text-primary-700 font-semibold px-8 py-3 rounded-lg hover:bg-primary-50 transition-colors shadow-md"
+            href="/crc-educational-site/how-it-works"
+            style={{backgroundColor: '#ffffff', color: '#0369a1'}}
+            className="inline-block font-semibold px-8 py-3 rounded-lg hover:bg-primary-50 transition-colors shadow-md"
           >
             Continue to How It Works →
           </a>
