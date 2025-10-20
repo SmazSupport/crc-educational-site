@@ -8,13 +8,13 @@ const Home = () => {
       <div className="bg-gradient-to-br from-primary-600 to-primary-800 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
           <div className="text-center">
-            <h1 className="text-5xl md:text-6xl font-bold mb-6">
+            <h1 className="text-5xl md:text-6xl font-bold mb-6 text-white">
               Catching Data Errors with CRC
             </h1>
-            <p className="text-xl md:text-2xl mb-4 text-primary-100">
+            <p className="text-xl md:text-2xl mb-4 text-white">
               Cyclic Redundancy Check Methodology
             </p>
-            <p className="text-lg mb-8 text-primary-50">
+            <p className="text-lg mb-8 text-white">
               An Educational Exploration of Error Detection in Data Communications
             </p>
             
