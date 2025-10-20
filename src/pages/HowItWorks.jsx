@@ -131,7 +131,7 @@ const HowItWorks = () => {
             <h2 className="text-2xl font-bold text-gray-800 mb-4">Common CRC Polynomials</h2>
             
             <p className="text-gray-700 mb-4">
-              Different applications use different CRC polynomials. Here are some common ones:
+              Different applications use different CRC polynomials [3][6]. Here are some common ones:
             </p>
 
             <div className="overflow-x-auto">

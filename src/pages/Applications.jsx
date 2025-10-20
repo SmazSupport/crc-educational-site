@@ -22,7 +22,7 @@ const Applications = () => {
             </div>
             
             <p className="text-gray-700 mb-4">
-              Ethernet (IEEE 802.3) uses CRC-32 to check every frame of data sent over the network [3]. 
+              Ethernet (IEEE 802.3) uses CRC-32 to check every frame of data sent over the network [4]. 
               This is the same technology used in your home router and office networks.
             </p>
 
@@ -47,13 +47,13 @@ const Applications = () => {
             </div>
             
             <p className="text-gray-700 mb-4">
-              Wireless networks use CRC to detect errors caused by interference, signal degradation, 
-              or obstacles between the transmitter and receiver.
+              Wireless networks also rely heavily on CRC for error detection [1]. Every WiFi packet 
+              includes a CRC to verify data integrity.
             </p>
 
             <p className="text-gray-700">
               WiFi is especially prone to errors because radio signals can be affected by walls, 
-              other devices, and distance. CRC helps ensure data integrity even in noisy environments.
+              other devices, and distance. CRC helps ensure data integrity even in noisy environments [5].
             </p>
           </div>
         </section>
