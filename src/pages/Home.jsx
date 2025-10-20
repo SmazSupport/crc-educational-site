@@ -5,28 +5,28 @@ const Home = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <div className="bg-gradient-to-br from-primary-600 to-primary-800 text-white">
+      <div style={{background: 'linear-gradient(to bottom right, #0284c7, #075985)'}} className="text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
           <div className="text-center">
-            <h1 className="text-5xl md:text-6xl font-bold mb-6 text-white">
+            <h1 style={{color: '#ffffff'}} className="text-5xl md:text-6xl font-bold mb-6">
               Catching Data Errors with CRC
             </h1>
-            <p className="text-xl md:text-2xl mb-4 text-white">
+            <p style={{color: '#ffffff'}} className="text-xl md:text-2xl mb-4">
               Cyclic Redundancy Check Methodology
             </p>
-            <p className="text-lg mb-8 text-white">
+            <p style={{color: '#ffffff'}} className="text-lg mb-8">
               An Educational Exploration of Error Detection in Data Communications
             </p>
             
             {/* Student Info - Prominently Displayed */}
-            <div className="bg-white/20 backdrop-blur-sm rounded-lg p-6 max-w-2xl mx-auto mb-8 border-2 border-white/30">
-              <p className="text-lg mb-2 text-white">
+            <div style={{backgroundColor: 'rgba(255, 255, 255, 0.2)', borderColor: 'rgba(255, 255, 255, 0.4)'}} className="backdrop-blur-sm rounded-lg p-6 max-w-2xl mx-auto mb-8 border-2">
+              <p style={{color: '#ffffff'}} className="text-lg mb-2">
                 <strong>Created by:</strong> Mark Stevens
               </p>
-              <p className="text-lg mb-2 text-white">
+              <p style={{color: '#ffffff'}} className="text-lg mb-2">
                 <strong>Course:</strong> INF680 - Data and Computer Communications
               </p>
-              <p className="text-lg text-white">
+              <p style={{color: '#ffffff'}} className="text-lg">
                 <strong>Date:</strong> October 2025
               </p>
             </div>
