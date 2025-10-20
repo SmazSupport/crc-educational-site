@@ -9,7 +9,7 @@ const Home = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
           <div className="text-center">
             <h1 className="text-5xl md:text-6xl font-bold mb-6">
-              CRC Error Checking
+              Catching Data Errors with CRC
             </h1>
             <p className="text-xl md:text-2xl mb-4 text-primary-100">
               Cyclic Redundancy Check Methodology
@@ -19,14 +19,14 @@ const Home = () => {
             </p>
             
             {/* Student Info - Prominently Displayed */}
-            <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 max-w-2xl mx-auto mb-8">
-              <p className="text-lg mb-2">
+            <div className="bg-white/20 backdrop-blur-sm rounded-lg p-6 max-w-2xl mx-auto mb-8 border-2 border-white/30">
+              <p className="text-lg mb-2 text-white">
                 <strong>Created by:</strong> Mark Stevens
               </p>
-              <p className="text-lg mb-2">
+              <p className="text-lg mb-2 text-white">
                 <strong>Course:</strong> INF680 - Data and Computer Communications
               </p>
-              <p className="text-lg">
+              <p className="text-lg text-white">
                 <strong>Date:</strong> October 2025
               </p>
             </div>
