@@ -23,8 +23,8 @@ const Navigation = () => {
         <div className="flex justify-between h-16">
           <div className="flex items-center">
             <Link to="/" className="flex items-center space-x-2">
-              <div className="w-10 h-10 bg-primary-600 rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-xl">CRC</span>
+              <div className="w-10 h-10 bg-fhsu-gold rounded-lg flex items-center justify-center">
+                <span className="text-black font-bold text-xl">CRC</span>
               </div>
               <span className="font-bold text-xl text-gray-800 hidden sm:block">
                 CRC Learning Hub
@@ -42,7 +42,7 @@ const Navigation = () => {
                   to={item.path}
                   className={`flex items-center space-x-1 px-3 py-2 rounded-md text-sm font-medium transition-colors ${
                     isActive(item.path)
-                      ? 'bg-primary-100 text-primary-700'
+                      ? 'bg-yellow-100 text-fhsu-gold font-semibold'
                       : 'text-gray-700 hover:bg-gray-100'
                   }`}
                 >
@@ -57,7 +57,7 @@ const Navigation = () => {
           <div className="md:hidden flex items-center">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="text-gray-700 hover:text-primary-600 focus:outline-none"
+              className="text-gray-700 hover:text-fhsu-gold focus:outline-none"
             >
               {isOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
@@ -78,7 +78,7 @@ const Navigation = () => {
                   onClick={() => setIsOpen(false)}
                   className={`flex items-center space-x-2 px-3 py-2 rounded-md text-base font-medium ${
                     isActive(item.path)
-                      ? 'bg-primary-100 text-primary-700'
+                      ? 'bg-yellow-100 text-fhsu-gold font-semibold'
                       : 'text-gray-700 hover:bg-gray-100'
                   }`}
                 >
