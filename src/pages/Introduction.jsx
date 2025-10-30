@@ -18,25 +18,23 @@ const Introduction = () => {
             </div>
             
             <p className="text-gray-700 mb-4">
-              <strong>Cyclic Redundancy Check (CRC)</strong> is how we catch errors in data before they cause problems (Stallings, 2013). 
-              When you send data over a network or write it to a hard drive, bits can flip — 
-              maybe from electrical noise, a scratched disk, or interference on the wire. CRC is our quality-control checkpoint 
-              that tells us if the data got corrupted.
+              <strong>Cyclic Redundancy Check (CRC)</strong> is an error detection method used to identify data corruption before it causes problems (Stallings, 2013). 
+              When data is transmitted over a network or written to a hard drive, bits can flip due to electrical noise, physical disk damage, or signal interference. 
+              CRC serves as a quality-control checkpoint that indicates whether data has been corrupted during transmission or storage.
             </p>
             
             <div className="bg-yellow-50 border-l-4 border-fhsu-gold p-4 mb-4">
               <p className="text-gray-700">
-                <strong>Think of it like this:</strong> Imagine you're shipping a box through your warehouse. 
-                Before it leaves, you count all the items and write the total on the packing slip. When it arrives at the destination, 
-                they count again. If the counts match, the shipment's good. If not, something went missing in transit. 
-                That's basically what CRC does — but with data instead of boxes.
+                <strong>Analogy:</strong> Consider a warehouse shipping process where items are counted before departure and the total is recorded on a packing slip. 
+                Upon arrival at the destination, the items are counted again. If the counts match, the shipment is intact. If not, something was lost in transit. 
+                CRC operates on the same principle, but with data instead of physical items.
               </p>
             </div>
 
             <p className="text-gray-700">
-              Under the hood, CRC uses polynomial division on binary data — kind of like long division you learned in school, 
-              but with XOR operations instead of subtraction (Stallings, 2013). The remainder from that division becomes our "check value" 
-              that travels with the data.
+              CRC uses polynomial division on binary data, similar to long division, 
+              but with XOR operations instead of subtraction (Stallings, 2013). The remainder from that division becomes the "check value" 
+              that is appended to the data.
             </p>
           </div>
         </section>
@@ -50,24 +48,23 @@ const Introduction = () => {
             </div>
             
             <p className="text-gray-700 mb-4">
-              We use CRC everywhere because it hits the sweet spot between reliability and efficiency (Stallings, 2013; Newton, 2007):
+              CRC is widely adopted because it provides an optimal balance between reliability and efficiency (Stallings, 2013; Newton, 2007):
             </p>
 
             <ul className="list-disc list-inside space-y-2 text-gray-700 mb-4">
-              <li><strong>Catches most errors</strong> — burst errors, single-bit flips, you name it</li>
-              <li><strong>Hardware-friendly</strong> — simple circuits can calculate it on the fly</li>
-              <li><strong>Low overhead</strong> — we're talking a few extra bytes, not megabytes</li>
-              <li><strong>Fast</strong> — happens in microseconds, even on basic chips</li>
+              <li><strong>Catches most errors</strong> including burst errors and single-bit flips</li>
+              <li><strong>Hardware-friendly</strong> with simple circuits that can calculate it in real-time</li>
+              <li><strong>Low overhead</strong> requiring only a few extra bytes per transmission</li>
+              <li><strong>Fast</strong> with calculations completing in microseconds, even on basic chips</li>
             </ul>
 
             <div className="bg-gray-50 rounded-lg p-4">
               <p className="text-gray-700 mb-2">
-                <strong>For you, that means:</strong>
+                <strong>Practical Impact:</strong>
               </p>
               <p className="text-gray-700">
-                Every time you connect to WiFi, plug in a USB drive, or stream a video over Ethernet, 
-                CRC is running in the background making sure your data arrives intact. It's the invisible quality-control 
-                layer that keeps the digital world reliable.
+                Every WiFi connection, USB drive transfer, and Ethernet video stream relies on CRC running in the background to ensure data arrives intact. 
+                This invisible quality-control layer maintains reliability across digital communications.
               </p>
             </div>
           </div>
@@ -79,17 +76,17 @@ const Introduction = () => {
             <h2 className="text-2xl font-bold text-gray-800 mb-4">Brief History</h2>
             
             <p className="text-gray-700 mb-4">
-              CRC showed up in 1961 when engineers needed a reliable way to catch transmission errors (Newton, 2007). 
-              Back then, data lines were noisy and unreliable — think telegraph-era tech trying to handle computer data. 
-              As networks exploded in the '70s and '80s, CRC became the go-to standard because it just worked (Stallings, 2013).
+              CRC was developed in 1961 when engineers needed a reliable method to detect transmission errors (Newton, 2007). 
+              At that time, data lines were noisy and unreliable, with telegraph-era technology attempting to handle computer data. 
+              As networks expanded rapidly in the 1970s and 1980s, CRC became the standard due to its proven effectiveness (Stallings, 2013).
             </p>
 
             <div className="bg-gray-50 rounded-lg p-4">
               <h3 className="font-semibold mb-2 text-gray-800">Key Milestones:</h3>
               <ul className="space-y-2 text-gray-700">
-                <li><strong>1961:</strong> CRC algorithm developed — engineers needed error detection for early data links</li>
-                <li><strong>1980s:</strong> Ethernet (IEEE 802.3) adopted CRC-32 — became the backbone of office networks (IEEE Standards Association, 2018)</li>
-                <li><strong>Today:</strong> Built into almost every digital communication protocol you can think of</li>
+                <li><strong>1961:</strong> CRC algorithm developed to provide error detection for early data links</li>
+                <li><strong>1980s:</strong> Ethernet (IEEE 802.3) adopted CRC-32, becoming the backbone of office networks (IEEE Standards Association, 2018)</li>
+                <li><strong>Today:</strong> Integrated into nearly every digital communication protocol</li>
               </ul>
             </div>
           </div>
@@ -101,19 +98,19 @@ const Introduction = () => {
             <h2 className="text-2xl font-bold text-gray-800 mb-4">Detection vs. Correction</h2>
             
             <p className="text-gray-700 mb-4">
-              Here's the key thing: CRC can <strong>detect</strong> errors, but it can't <strong>fix</strong> them (Stallings, 2013). 
-              Think of it like a smoke detector — it tells you there's a problem, but it doesn't put out the fire. 
-              When CRC catches an error, the system typically just asks for a retransmission (Cisco Systems, 2024).
+              The key distinction is that CRC can <strong>detect</strong> errors, but it cannot <strong>fix</strong> them (Stallings, 2013). 
+              Like a smoke detector that alerts to a problem without extinguishing the fire, CRC identifies corruption without repairing it. 
+              When CRC detects an error, the system typically requests a retransmission (Cisco Systems, 2024).
             </p>
 
             <div className="grid md:grid-cols-2 gap-4">
               <div className="border-2 border-green-200 rounded-lg p-4">
                 <h3 className="font-semibold text-green-700 mb-2">What CRC Does:</h3>
                 <ul className="text-sm text-gray-700 space-y-1">
-                  <li>✓ Spots when errors happened</li>
+                  <li>✓ Identifies when errors have occurred</li>
                   <li>✓ Flags corrupted data immediately</li>
-                  <li>✓ Runs fast — we're talking microseconds</li>
-                  <li>✓ Works reliably across billions of transmissions</li>
+                  <li>✓ Executes in microseconds</li>
+                  <li>✓ Operates reliably across billions of transmissions</li>
                 </ul>
               </div>
               <div className="border-2 border-red-200 rounded-lg p-4">
@@ -129,9 +126,9 @@ const Introduction = () => {
 
             <div className="bg-blue-50 border-l-4 border-blue-600 p-4 mt-4">
               <p className="text-gray-700 text-sm">
-                <strong>Real-world example:</strong> When your network card receives an Ethernet frame with a bad CRC, 
-                it just drops the frame. The upper layers (like TCP) notice the missing data and request a retransmission. 
-                You never see it happen — it's all automatic.
+                <strong>Real-world example:</strong> When a network card receives an Ethernet frame with a bad CRC, 
+                it drops the frame. The upper layers (like TCP) detect the missing data and request a retransmission. 
+                This process occurs automatically and transparently to the end user.
               </p>
             </div>
           </div>
@@ -139,10 +136,10 @@ const Introduction = () => {
 
         {/* Next Steps */}
         <div style={{background: 'linear-gradient(to right, #000000, #333333)'}} className="rounded-lg p-8 text-center mb-8 shadow-lg">
-          <h3 style={{color: '#ffffff'}} className="text-2xl font-bold mb-3">Ready to See How It Works?</h3>
+          <h3 style={{color: '#ffffff'}} className="text-2xl font-bold mb-3">Understanding the Mechanics</h3>
           <p style={{color: '#ffffff'}} className="mb-6">
-            Now that you know what CRC does, let's dive into the actual mechanics — the polynomial division, 
-            the XOR operations, and how it all comes together.
+            The following section explores the technical mechanics of CRC, including polynomial division, 
+            XOR operations, and the complete calculation process.
           </p>
           <Link
             to="/how-it-works"

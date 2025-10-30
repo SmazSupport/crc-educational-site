@@ -68,8 +68,8 @@ const Home = () => {
               What CRC Is and Why It Matters
             </h3>
             <p className="text-gray-600">
-              We break down how CRC works — from the polynomial division math to the XOR operations — 
-              and why it's the go-to error detection method for everything from Ethernet to USB drives.
+              This section explains how CRC works, from polynomial division mathematics to XOR operations, 
+              and why it is the standard error detection method for systems ranging from Ethernet to USB drives.
             </p>
           </div>
 
@@ -81,8 +81,8 @@ const Home = () => {
               The Mechanics Behind It
             </h3>
             <p className="text-gray-600">
-              Walk through the actual process: picking a generator polynomial, running the division, 
-              attaching the check value, and verifying on the other end. It's simpler than it sounds.
+              This section covers the complete process: selecting a generator polynomial, executing the division, 
+              attaching the check value, and performing verification at the receiver.
             </p>
           </div>
 
@@ -94,8 +94,8 @@ const Home = () => {
               Where You'll Find It
             </h3>
             <p className="text-gray-600">
-              CRC runs in the background of almost every digital system you use — your WiFi, 
-              hard drives, USB connections, even ZIP files. See where it's doing quality control in the real world.
+              CRC operates in the background of nearly every digital system in use today, including WiFi, 
+              hard drives, USB connections, and ZIP files. This section examines its real-world applications.
             </p>
           </div>
         </div>
@@ -110,32 +110,32 @@ const Home = () => {
                 Why CRC Is Everywhere
               </h2>
               <p className="text-gray-600 mb-4">
-                Data gets corrupted all the time — electrical noise, scratched disks, radio interference. 
-                CRC is how we catch those errors before they cause problems. It's the standard because it:
+                Data corruption occurs frequently due to electrical noise, physical disk damage, and radio interference. 
+                CRC detects these errors before they cause problems. It became the standard because it:
               </p>
               <ul className="space-y-3">
                 <li className="flex items-start">
                   <CheckCircle className="text-fhsu-gold mr-3 mt-1 flex-shrink-0" size={20} />
                   <span className="text-gray-600">
-                    <strong>Catches what matters</strong> — burst errors, bit flips, most corruption patterns
+                    <strong>Catches what matters</strong> including burst errors, bit flips, and most corruption patterns
                   </span>
                 </li>
                 <li className="flex items-start">
                   <CheckCircle className="text-fhsu-gold mr-3 mt-1 flex-shrink-0" size={20} />
                   <span className="text-gray-600">
-                    <strong>Runs fast</strong> — simple circuits calculate it at wire speed with minimal overhead
+                    <strong>Runs fast</strong> with simple circuits calculating it at wire speed with minimal overhead
                   </span>
                 </li>
                 <li className="flex items-start">
                   <CheckCircle className="text-fhsu-gold mr-3 mt-1 flex-shrink-0" size={20} />
                   <span className="text-gray-600">
-                    <strong>Battle-tested</strong> — decades of use in Ethernet, USB, WiFi, storage systems
+                    <strong>Battle-tested</strong> through decades of use in Ethernet, USB, WiFi, and storage systems
                   </span>
                 </li>
                 <li className="flex items-start">
                   <CheckCircle className="text-fhsu-gold mr-3 mt-1 flex-shrink-0" size={20} />
                   <span className="text-gray-600">
-                    <strong>Solid math</strong> — polynomial algebra gives it predictable, reliable behavior
+                    <strong>Solid math</strong> as polynomial algebra provides predictable, reliable behavior
                   </span>
                 </li>
               </ul>
@@ -184,7 +184,7 @@ const Home = () => {
           <Link to="/how-it-works" className="card hover:border-fhsu-gold border-2 border-transparent transition-all">
             <h3 className="text-xl font-semibold mb-2 text-gray-800">How It Works</h3>
             <p className="text-gray-600 mb-4">
-              The step-by-step workflow: generator polynomials, XOR division, and how the check value gets verified.
+              The step-by-step workflow including generator polynomials, XOR division, and check value verification.
             </p>
             <span className="text-fhsu-gold font-semibold inline-flex items-center">
               Learn More <ArrowRight className="ml-2" size={16} />
@@ -194,7 +194,7 @@ const Home = () => {
           <Link to="/applications" className="card hover:border-fhsu-gold border-2 border-transparent transition-all">
             <h3 className="text-xl font-semibold mb-2 text-gray-800">Applications</h3>
             <p className="text-gray-600 mb-4">
-              Where CRC runs in the real world — Ethernet, WiFi, hard drives, USB, and more.
+              Real-world applications of CRC in Ethernet, WiFi, hard drives, USB, and other systems.
             </p>
             <span className="text-fhsu-gold font-semibold inline-flex items-center">
               Learn More <ArrowRight className="ml-2" size={16} />
@@ -204,7 +204,7 @@ const Home = () => {
           <Link to="/calculator" className="card hover:border-fhsu-gold border-2 border-transparent transition-all">
             <h3 className="text-xl font-semibold mb-2 text-gray-800">CRC Calculator</h3>
             <p className="text-gray-600 mb-4">
-              Run your own data through the CRC process and watch the XOR division happen step-by-step.
+              Interactive tool to process custom data through the CRC algorithm with step-by-step XOR division visualization.
             </p>
             <span className="text-fhsu-gold font-semibold inline-flex items-center">
               Try It <ArrowRight className="ml-2" size={16} />
