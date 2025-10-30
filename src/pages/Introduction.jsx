@@ -33,8 +33,8 @@ const Introduction = () => {
 
             <p className="text-gray-700">
               CRC uses polynomial division on binary data, similar to long division, 
-              but with XOR operations instead of subtraction (Stallings, 2013). The remainder from that division becomes the "check value" 
-              that is appended to the data.
+              but with XOR operations instead of subtraction (Stallings, 2013; Newton, 2007). The remainder from that division becomes the "check value" 
+              that is appended to the data (Koopman, 2024).
             </p>
           </div>
         </section>
@@ -52,10 +52,10 @@ const Introduction = () => {
             </p>
 
             <ul className="list-disc list-inside space-y-2 text-gray-700 mb-4">
-              <li><strong>Catches most errors</strong> including burst errors and single-bit flips</li>
-              <li><strong>Hardware-friendly</strong> with simple circuits that can calculate it in real-time</li>
-              <li><strong>Low overhead</strong> requiring only a few extra bytes per transmission</li>
-              <li><strong>Fast</strong> with calculations completing in microseconds, even on basic chips</li>
+              <li><strong>Catches most errors</strong> including burst errors and single-bit flips (Koopman, 2024)</li>
+              <li><strong>Hardware-friendly</strong> with simple circuits that can calculate it in real-time (Stallings, 2013)</li>
+              <li><strong>Low overhead</strong> requiring only a few extra bytes per transmission (Newton, 2007)</li>
+              <li><strong>Fast</strong> with calculations completing in microseconds, even on basic chips (Cisco Systems, 2024)</li>
             </ul>
 
             <div className="bg-gray-50 rounded-lg p-4">
@@ -63,8 +63,8 @@ const Introduction = () => {
                 <strong>Practical Impact:</strong>
               </p>
               <p className="text-gray-700">
-                Every WiFi connection, USB drive transfer, and Ethernet video stream relies on CRC running in the background to ensure data arrives intact. 
-                This invisible quality-control layer maintains reliability across digital communications.
+                Every WiFi connection, USB drive transfer, and Ethernet video stream relies on CRC running in the background to ensure data arrives intact (IEEE Standards Association, 2018). 
+                This invisible quality-control layer maintains reliability across digital communications (Cisco Systems, 2024).
               </p>
             </div>
           </div>
@@ -103,24 +103,20 @@ const Introduction = () => {
               When CRC detects an error, the system typically requests a retransmission (Cisco Systems, 2024).
             </p>
 
-            <div className="grid md:grid-cols-2 gap-4">
-              <div className="border-2 border-green-200 rounded-lg p-4">
-                <h3 className="font-semibold text-green-700 mb-2">What CRC Does:</h3>
-                <ul className="text-sm text-gray-700 space-y-1">
-                  <li>✓ Identifies when errors have occurred</li>
-                  <li>✓ Flags corrupted data immediately</li>
-                  <li>✓ Executes in microseconds</li>
-                  <li>✓ Operates reliably across billions of transmissions</li>
-                </ul>
-              </div>
-              <div className="border-2 border-red-200 rounded-lg p-4">
-                <h3 className="font-semibold text-red-700 mb-2">What CRC Doesn't Do:</h3>
-                <ul className="text-sm text-gray-700 space-y-1">
-                  <li>✗ Repair the corrupted bits</li>
-                  <li>✗ Tell you exactly which bits flipped</li>
-                  <li>✗ Guarantee 100% detection (but it's close)</li>
-                  <li>✗ Prevent errors from happening</li>
-                </ul>
+            <div className="bg-gray-50 rounded-lg p-6">
+              <h3 className="font-semibold text-gray-800 mb-3">CRC Capabilities and Limitations</h3>
+              <div className="space-y-3 text-gray-700">
+                <p>
+                  <strong>What it does:</strong> CRC spots errors fast (Stallings, 2013). When a packet arrives corrupted, CRC flags it immediately. 
+                  The calculation runs in microseconds, even on basic hardware (Koopman, 2024). It's proven reliable across billions of transmissions daily.
+                </p>
+                <p>
+                  <strong>What it doesn't do:</strong> CRC won't fix corrupted bits (Newton, 2007). It can't pinpoint which specific bits flipped. 
+                  It doesn't prevent errors from happening in the first place. And while detection rates are extremely high, no error detection method guarantees 100% accuracy (Stallings, 2013).
+                </p>
+                <p className="text-sm">
+                  <strong>Bottom line:</strong> CRC is a detector, not a repair tool. It tells the system "this data is bad," and the system handles it from there, typically by requesting retransmission (Cisco Systems, 2024).
+                </p>
               </div>
             </div>
 

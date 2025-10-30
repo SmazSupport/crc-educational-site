@@ -30,8 +30,8 @@ const HowItWorks = () => {
                 <div>
                   <h3 className="font-semibold text-gray-800 mb-1">Pick a Generator Polynomial</h3>
                   <p className="text-gray-700 text-sm">
-                    Both sender and receiver must agree on a "generator polynomial," which is a specific binary pattern (Stallings, 2013). 
-                    Common polynomials include CRC-8 (simple devices), CRC-16 (USB, Modbus), and CRC-32 (Ethernet, ZIP files) (Koopman, 2024). 
+                    Both sender and receiver must agree on a "generator polynomial," which is a specific binary pattern (Stallings, 2013; Newton, 2007). 
+                    Common polynomials include CRC-8 (simple devices), CRC-16 (USB, Modbus), and CRC-32 (Ethernet, ZIP files) (Koopman, 2024; Cisco Systems, 2024). 
                     This agreement is analogous to establishing a quality-control checklist before beginning a shipping process.
                   </p>
                 </div>
@@ -44,9 +44,9 @@ const HowItWorks = () => {
                 <div>
                   <h3 className="font-semibold text-gray-800 mb-1">Run the Division</h3>
                   <p className="text-gray-700 text-sm">
-                    The data is divided by the generator polynomial using modulo-2 division (Stallings, 2013). This process uses 
-                    XOR operations instead of normal subtraction. Similar to long division but simpler, it requires no borrowing 
-                    or carrying. Hardware can execute this operation in a few clock cycles.
+                    The data is divided by the generator polynomial using modulo-2 division (Stallings, 2013; Newton, 2007). This process uses 
+                    XOR operations instead of normal subtraction (Koopman, 2024). Similar to long division but simpler, it requires no borrowing 
+                    or carrying. Hardware can execute this operation in a few clock cycles (Cisco Systems, 2024).
                   </p>
                 </div>
               </div>
@@ -58,8 +58,8 @@ const HowItWorks = () => {
                 <div>
                   <h3 className="font-semibold text-gray-800 mb-1">Attach the Remainder</h3>
                   <p className="text-gray-700 text-sm">
-                    The remainder from that division is the CRC value (Stallings, 2013). This value is appended to the end of the data packet, 
-                    similar to attaching a packing slip to a box. The data and its check value then travel together.
+                    The remainder from that division is the CRC value (Stallings, 2013; Newton, 2007). This value is appended to the end of the data packet, 
+                    similar to attaching a packing slip to a box. The data and its check value then travel together (Koopman, 2024).
                   </p>
                 </div>
               </div>
@@ -142,8 +142,8 @@ const HowItWorks = () => {
             <h2 className="text-2xl font-bold text-gray-800 mb-4">Common CRC Polynomials</h2>
             
             <p className="text-gray-700 mb-4">
-              Different systems use different CRC polynomials based on their specific requirements (Koopman, 2024; Cisco Systems, 2024). 
-              Longer polynomials provide better error detection but require additional processing. The most common polynomials include:
+              Different systems use different CRC polynomials based on their specific requirements (Koopman, 2024; Cisco Systems, 2024; Stallings, 2013). 
+              Longer polynomials provide better error detection but require additional processing (Newton, 2007). The most common polynomials include:
             </p>
 
             <div className="overflow-x-auto">
@@ -188,30 +188,30 @@ const HowItWorks = () => {
             <ul className="space-y-3 text-gray-700">
               <li className="flex items-start">
                 <span className="text-primary-600 mr-2">•</span>
-                <span><strong>XOR instead of subtraction:</strong> CRC division uses XOR operations, making it fast and hardware-friendly</span>
+                <span><strong>XOR instead of subtraction:</strong> CRC division uses XOR operations, making it fast and hardware-friendly (Stallings, 2013)</span>
               </li>
               <li className="flex items-start">
                 <span className="text-primary-600 mr-2">•</span>
-                <span><strong>The remainder is the check value:</strong> This value is appended to the data</span>
+                <span><strong>The remainder is the check value:</strong> This value is appended to the data (Newton, 2007)</span>
               </li>
               <li className="flex items-start">
                 <span className="text-primary-600 mr-2">•</span>
-                <span><strong>Both sides need the same polynomial:</strong> Sender and receiver have to agree on which one to use</span>
+                <span><strong>Both sides need the same polynomial:</strong> Sender and receiver have to agree on which one to use (Koopman, 2024)</span>
               </li>
               <li className="flex items-start">
                 <span className="text-primary-600 mr-2">•</span>
-                <span><strong>Zero means success:</strong> A zero remainder at the receiver indicates intact data</span>
+                <span><strong>Zero means success:</strong> A zero remainder at the receiver indicates intact data (Cisco Systems, 2024)</span>
               </li>
               <li className="flex items-start">
                 <span className="text-primary-600 mr-2">•</span>
-                <span><strong>Longer = better detection:</strong> CRC-32 detects significantly more errors than CRC-8 while adding only a few extra bytes</span>
+                <span><strong>Longer = better detection:</strong> CRC-32 detects significantly more errors than CRC-8 while adding only a few extra bytes (Koopman, 2024; Stallings, 2013)</span>
               </li>
             </ul>
 
-            <div className="bg-blue-50 border-l-4 border-blue-600 p-4 mt-4">
+            <div className="bg-gray-50 rounded-lg p-4 mt-4">
               <p className="text-gray-700 text-sm">
-                <strong>Design Considerations:</strong> System designers select CRC size based on expected error rates and performance requirements (Koopman, 2024). 
-                High-speed Ethernet uses CRC-32 because it can be processed at wire speed (IEEE Standards Association, 2018). Simple sensors may use CRC-8 to conserve processing power.
+                <strong>Choosing the right CRC:</strong> System designers select CRC size based on expected error rates and performance requirements (Koopman, 2024; Stallings, 2013). 
+                High-speed Ethernet uses CRC-32 because it can be processed at wire speed (IEEE Standards Association, 2018). Simple sensors may use CRC-8 to conserve processing power (Newton, 2007).
               </p>
             </div>
           </div>

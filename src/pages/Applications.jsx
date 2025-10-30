@@ -23,17 +23,17 @@ const Applications = () => {
             </div>
             
             <p className="text-gray-700 mb-4">
-              Ethernet (IEEE 802.3) uses CRC-32 on every frame transmitted across the network (IEEE Standards Association, 2018). 
-              Home routers, office networks, and data center switches all perform CRC checks millions of times per second (Cisco Systems, 2024).
+              Ethernet (IEEE 802.3) uses CRC-32 on every frame transmitted across the network (IEEE Standards Association, 2018; Stallings, 2013). 
+              Home routers, office networks, and data center switches all perform CRC checks millions of times per second (Cisco Systems, 2024; Koopman, 2024).
             </p>
 
             <div className="bg-gray-50 rounded-lg p-4">
               <h3 className="font-semibold mb-2">How it works in Ethernet:</h3>
               <ul className="text-sm text-gray-700 space-y-2">
-                <li><strong>Every frame gets a check value</strong> as the network card calculates a 32-bit CRC and appends it</li>
-                <li><strong>Receiver validates on arrival</strong> by dropping frames with mismatched CRC values immediately</li>
-                <li><strong>Upper layers handle retransmission</strong> as TCP detects missing data and requests retransmission (Stallings, 2013)</li>
-                <li><strong>Process is transparent</strong> occurring automatically at wire speed</li>
+                <li><strong>Every frame gets a check value</strong> as the network card calculates a 32-bit CRC and appends it (IEEE Standards Association, 2018)</li>
+                <li><strong>Receiver validates on arrival</strong> by dropping frames with mismatched CRC values immediately (Cisco Systems, 2024)</li>
+                <li><strong>Upper layers handle retransmission</strong> as TCP detects missing data and requests retransmission (Stallings, 2013; Newton, 2007)</li>
+                <li><strong>Process is transparent</strong> occurring automatically at wire speed (Koopman, 2024)</li>
               </ul>
             </div>
 
@@ -56,8 +56,8 @@ const Applications = () => {
             </div>
             
             <p className="text-gray-700 mb-4">
-              WiFi packets experience more interference than wired traffic (Stallings, 2013). Radio signals reflect off walls, 
-              interfere with each other, and attenuate with distance. Every WiFi frame includes a CRC to detect corruption before it causes problems (Cisco Systems, 2024).
+              WiFi packets experience more interference than wired traffic (Stallings, 2013; Newton, 2007). Radio signals reflect off walls, 
+              interfere with each other, and attenuate with distance (Koopman, 2024). Every WiFi frame includes a CRC to detect corruption before it causes problems (Cisco Systems, 2024; IEEE Standards Association, 2018).
             </p>
 
             <div className="bg-gray-50 rounded-lg p-4">
@@ -89,18 +89,18 @@ const Applications = () => {
             </div>
             
             <p className="text-gray-700 mb-4">
-              Storage devices use CRC to verify data during both write and read operations (Stallings, 2013). 
-              When a file is saved, the drive calculates a CRC and stores it alongside the data. When the file is read later, 
-              the drive recalculates the CRC and compares values. Mismatched values indicate data corruption.
+              Storage devices use CRC to verify data during both write and read operations (Stallings, 2013; Newton, 2007). 
+              When a file is saved, the drive calculates a CRC and stores it alongside the data (Koopman, 2024). When the file is read later, 
+              the drive recalculates the CRC and compares values. Mismatched values indicate data corruption (Cisco Systems, 2024).
             </p>
 
             <div className="bg-gray-50 rounded-lg p-4">
               <h3 className="font-semibold mb-2">Where you'll find it:</h3>
               <ul className="text-sm text-gray-700 space-y-2">
-                <li><strong>Hard Drives:</strong> Every sector includes error-checking to detect bit rot and mechanical errors (Stallings, 2013)</li>
-                <li><strong>SSDs:</strong> Flash memory degradation over time is detected through CRC validation</li>
-                <li><strong>USB Drives:</strong> Data transfers are validated in real-time during file operations</li>
-                <li><strong>SD Cards:</strong> Photos and videos receive CRC protection to prevent corruption</li>
+                <li><strong>Hard Drives:</strong> Every sector includes error-checking to detect bit rot and mechanical errors (Stallings, 2013; Newton, 2007)</li>
+                <li><strong>SSDs:</strong> Flash memory degradation over time is detected through CRC validation (Koopman, 2024)</li>
+                <li><strong>USB Drives:</strong> Data transfers are validated in real-time during file operations (Cisco Systems, 2024)</li>
+                <li><strong>SD Cards:</strong> Photos and videos receive CRC protection to prevent corruption (Stallings, 2013)</li>
               </ul>
             </div>
 
@@ -122,8 +122,8 @@ const Applications = () => {
               <div className="border-2 border-gray-200 rounded-lg p-4">
                 <h3 className="font-semibold mb-2">File Formats</h3>
                 <p className="text-sm text-gray-700">
-                  ZIP files, PNG images, and GZIP archives all embed CRC values. "CRC failed" errors during extraction 
-                  indicate file corruption occurred.
+                  ZIP files, PNG images, and GZIP archives all embed CRC values (Koopman, 2024). "CRC failed" errors during extraction 
+                  indicate file corruption occurred (Stallings, 2013).
                 </p>
               </div>
 
@@ -138,16 +138,16 @@ const Applications = () => {
               <div className="border-2 border-gray-200 rounded-lg p-4">
                 <h3 className="font-semibold mb-2">Bluetooth</h3>
                 <p className="text-sm text-gray-700">
-                  Wireless headphones, keyboards, and mice all use CRC to maintain connection integrity. 
-                  Constant radio interference makes CRC essential for catching errors before they cause glitches.
+                  Wireless headphones, keyboards, and mice all use CRC to maintain connection integrity (Cisco Systems, 2024). 
+                  Constant radio interference makes CRC essential for catching errors before they cause glitches (Newton, 2007).
                 </p>
               </div>
 
               <div className="border-2 border-gray-200 rounded-lg p-4">
                 <h3 className="font-semibold mb-2">Satellite Communications</h3>
                 <p className="text-sm text-gray-700">
-                  Signals traveling through space encounter cosmic radiation and atmospheric interference. 
-                  CRC is critical for error detection when retransmission is expensive or impossible.
+                  Signals traveling through space encounter cosmic radiation and atmospheric interference (Stallings, 2013). 
+                  CRC is critical for error detection when retransmission is expensive or impossible (Koopman, 2024).
                 </p>
               </div>
             </div>

@@ -191,9 +191,9 @@ const Calculator = () => {
                   <button
                     key={preset.name}
                     onClick={() => handlePresetChange(preset)}
-                    className={`px-4 py-2 rounded-lg font-medium text-sm transition-colors ${
+                    className={`px-4 py-2 rounded-lg font-medium text-sm transition-colors cursor-pointer ${
                       selectedPreset === preset.name
-                        ? 'bg-primary-600 text-white'
+                        ? 'bg-fhsu-gold text-black font-bold'
                         : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
                     }`}
                   >
@@ -336,8 +336,9 @@ const Calculator = () => {
                     setData('1101');
                     setGenerator('1011');
                     setSelectedPreset('CRC-3');
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
                   }}
-                  className="text-primary-600 hover:text-primary-700 font-semibold text-sm"
+                  className="text-fhsu-gold hover:text-fhsu-gold-dark font-semibold text-sm cursor-pointer hover:underline"
                 >
                   Load Example →
                 </button>
@@ -354,8 +355,9 @@ const Calculator = () => {
                     setData('11010011');
                     setGenerator('1011');
                     setSelectedPreset('CRC-3');
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
                   }}
-                  className="text-primary-600 hover:text-primary-700 font-semibold text-sm"
+                  className="text-fhsu-gold hover:text-fhsu-gold-dark font-semibold text-sm cursor-pointer hover:underline"
                 >
                   Load Example →
                 </button>
@@ -372,8 +374,9 @@ const Calculator = () => {
                     setData('1101');
                     setGenerator('10011');
                     setSelectedPreset('CRC-4');
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
                   }}
-                  className="text-primary-600 hover:text-primary-700 font-semibold text-sm"
+                  className="text-fhsu-gold hover:text-fhsu-gold-dark font-semibold text-sm cursor-pointer hover:underline"
                 >
                   Load Example →
                 </button>
@@ -390,8 +393,9 @@ const Calculator = () => {
                     setData('11010');
                     setGenerator('100101');
                     setSelectedPreset('CRC-5-USB');
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
                   }}
-                  className="text-primary-600 hover:text-primary-700 font-semibold text-sm"
+                  className="text-fhsu-gold hover:text-fhsu-gold-dark font-semibold text-sm cursor-pointer hover:underline"
                 >
                   Load Example →
                 </button>
