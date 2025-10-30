@@ -30,8 +30,8 @@ const HowItWorks = () => {
                 <div>
                   <h3 className="font-semibold text-gray-800 mb-1">Pick a Generator Polynomial</h3>
                   <p className="text-gray-700 text-sm">
-                    Both sender and receiver agree on a "generator polynomial" — basically a special binary pattern. 
-                    Common ones: CRC-8 (simple devices), CRC-16 (USB, Modbus), CRC-32 (Ethernet, ZIP files). 
+                    Both sender and receiver agree on a "generator polynomial" — basically a special binary pattern (Stallings, 2013). 
+                    Common ones: CRC-8 (simple devices), CRC-16 (USB, Modbus), CRC-32 (Ethernet, ZIP files) (Koopman, 2024). 
                     This is like agreeing on which quality-control checklist to use before you start shipping.
                   </p>
                 </div>
@@ -44,7 +44,7 @@ const HowItWorks = () => {
                 <div>
                   <h3 className="font-semibold text-gray-800 mb-1">Run the Division</h3>
                   <p className="text-gray-700 text-sm">
-                    We divide the data by the generator polynomial using modulo-2 division. That's just a fancy way of saying 
+                    We divide the data by the generator polynomial using modulo-2 division (Stallings, 2013). That's just a fancy way of saying 
                     "XOR operations instead of normal subtraction." It's like long division, but simpler — no borrowing, 
                     no carrying. The hardware does this in a few clock cycles.
                   </p>
@@ -58,7 +58,7 @@ const HowItWorks = () => {
                 <div>
                   <h3 className="font-semibold text-gray-800 mb-1">Attach the Remainder</h3>
                   <p className="text-gray-700 text-sm">
-                    The remainder from that division is our CRC value. We tack it onto the end of the data packet — 
+                    The remainder from that division is our CRC value (Stallings, 2013). We tack it onto the end of the data packet — 
                     kind of like stapling the packing slip to the box. Now the data and its check value travel together.
                   </p>
                 </div>
@@ -71,7 +71,7 @@ const HowItWorks = () => {
                 <div>
                   <h3 className="font-semibold text-gray-800 mb-1">Verify on the Other End</h3>
                   <p className="text-gray-700 text-sm">
-                    The receiver runs the same division on the whole thing (data + CRC). If everything arrived intact, 
+                    The receiver runs the same division on the whole thing (data + CRC) (Cisco Systems, 2024). If everything arrived intact, 
                     the remainder will be zero. If it's not zero, something got corrupted in transit and we need a retransmission. 
                     Simple pass/fail check.
                   </p>
@@ -97,7 +97,7 @@ const HowItWorks = () => {
               <h3 className="font-semibold mb-2">Step 1: Pick the Generator</h3>
               <p className="text-sm text-gray-700">
                 We'll use generator polynomial: <code className="bg-white px-2 py-1 rounded">1011</code> (a simple CRC-3 for demonstration). 
-                In the real world, Ethernet uses a 33-bit polynomial for CRC-32, but the concept's the same.
+                In the real world, Ethernet uses a 33-bit polynomial for CRC-32 (IEEE Standards Association, 2018), but the concept's the same.
               </p>
             </div>
 
@@ -142,7 +142,7 @@ const HowItWorks = () => {
             <h2 className="text-2xl font-bold text-gray-800 mb-4">Common CRC Polynomials</h2>
             
             <p className="text-gray-700 mb-4">
-              Different systems use different CRC polynomials depending on their needs <sup className="font-bold text-xs">[4]</sup><sup className="font-bold text-xs">[5]</sup>. 
+              Different systems use different CRC polynomials depending on their needs (Koopman, 2024; Cisco Systems, 2024). 
               Longer polynomials catch more errors but take a bit more processing. Here are the most common:
             </p>
 
@@ -210,8 +210,8 @@ const HowItWorks = () => {
 
             <div className="bg-blue-50 border-l-4 border-blue-600 p-4 mt-4">
               <p className="text-gray-700 text-sm">
-                <strong>Why this matters:</strong> When you're designing a system, you pick the CRC size based on your error rate and performance needs. 
-                High-speed Ethernet uses CRC-32 because it can handle it at wire speed. Simple sensors might use CRC-8 to save processing power.
+                <strong>Why this matters:</strong> When you're designing a system, you pick the CRC size based on your error rate and performance needs (Koopman, 2024). 
+                High-speed Ethernet uses CRC-32 because it can handle it at wire speed (IEEE Standards Association, 2018). Simple sensors might use CRC-8 to save processing power.
               </p>
             </div>
           </div>

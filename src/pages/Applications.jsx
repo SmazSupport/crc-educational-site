@@ -23,8 +23,8 @@ const Applications = () => {
             </div>
             
             <p className="text-gray-700 mb-4">
-              Ethernet (IEEE 802.3) uses CRC-32 on every single frame that crosses the wire <sup className="font-bold text-xs">[3]</sup>. 
-              Your home router, office network, data center switches — they're all running CRC checks millions of times per second.
+              Ethernet (IEEE 802.3) uses CRC-32 on every single frame that crosses the wire (IEEE Standards Association, 2018). 
+              Your home router, office network, data center switches — they're all running CRC checks millions of times per second (Cisco Systems, 2024).
             </p>
 
             <div className="bg-gray-50 rounded-lg p-4">
@@ -32,7 +32,7 @@ const Applications = () => {
               <ul className="text-sm text-gray-700 space-y-2">
                 <li><strong>Every frame gets a check value</strong> — the network card calculates a 32-bit CRC and tacks it on</li>
                 <li><strong>Receiver validates on arrival</strong> — if the CRC doesn't match, the frame gets dropped immediately</li>
-                <li><strong>Upper layers handle retransmission</strong> — TCP notices the missing data and asks for it again</li>
+                <li><strong>Upper layers handle retransmission</strong> — TCP notices the missing data and asks for it again (Stallings, 2013)</li>
                 <li><strong>You never see it happen</strong> — it's all automatic, happening at wire speed</li>
               </ul>
             </div>
@@ -56,8 +56,8 @@ const Applications = () => {
             </div>
             
             <p className="text-gray-700 mb-4">
-              WiFi packets get beat up even more than wired traffic <sup className="font-bold text-xs">[1]</sup>. Radio signals bounce off walls, 
-              interfere with each other, and fade with distance. Every WiFi frame includes a CRC to catch corruption before it causes problems.
+              WiFi packets get beat up even more than wired traffic (Stallings, 2013). Radio signals bounce off walls, 
+              interfere with each other, and fade with distance. Every WiFi frame includes a CRC to catch corruption before it causes problems (Cisco Systems, 2024).
             </p>
 
             <div className="bg-gray-50 rounded-lg p-4">
@@ -89,7 +89,7 @@ const Applications = () => {
             </div>
             
             <p className="text-gray-700 mb-4">
-              Storage devices use CRC to verify data both when writing and reading. Think of it like this: 
+              Storage devices use CRC to verify data both when writing and reading (Stallings, 2013). Think of it like this: 
               when you save a file, the drive calculates a CRC and stores it alongside the data. When you read that file later, 
               it recalculates the CRC and compares. If they don't match, the data got corrupted.
             </p>
@@ -97,7 +97,7 @@ const Applications = () => {
             <div className="bg-gray-50 rounded-lg p-4">
               <h3 className="font-semibold mb-2">Where you'll find it:</h3>
               <ul className="text-sm text-gray-700 space-y-2">
-                <li><strong>Hard Drives:</strong> Every sector has error-checking built in — CRC catches bit rot and mechanical errors</li>
+                <li><strong>Hard Drives:</strong> Every sector has error-checking built in — CRC catches bit rot and mechanical errors (Stallings, 2013)</li>
                 <li><strong>SSDs:</strong> Flash memory can degrade over time; CRC detects when cells start failing</li>
                 <li><strong>USB Drives:</strong> Data transfers get validated in real-time as files copy</li>
                 <li><strong>SD Cards:</strong> Your photos and videos get CRC protection so corruption doesn't ruin your memories</li>
@@ -130,7 +130,7 @@ const Applications = () => {
               <div className="border-2 border-gray-200 rounded-lg p-4">
                 <h3 className="font-semibold mb-2">USB Connections</h3>
                 <p className="text-sm text-gray-700">
-                  USB uses CRC-16 on every packet. When you plug in a device, CRC is validating the data stream 
+                  USB uses CRC-16 on every packet (Koopman, 2024). When you plug in a device, CRC is validating the data stream 
                   in real-time — that's how USB maintains reliability even at high speeds.
                 </p>
               </div>
@@ -160,7 +160,7 @@ const Applications = () => {
             <h2 className="text-2xl font-bold text-gray-800 mb-4">Why is CRC So Popular?</h2>
             
             <p className="text-gray-700 mb-4">
-              CRC won the error-detection race because it hits the engineering sweet spot:
+              CRC won the error-detection race because it hits the engineering sweet spot (Stallings, 2013; Koopman, 2024):
             </p>
 
             <ul className="space-y-2 text-gray-700">

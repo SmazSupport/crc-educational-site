@@ -18,7 +18,7 @@ const Introduction = () => {
             </div>
             
             <p className="text-gray-700 mb-4">
-              <strong>Cyclic Redundancy Check (CRC)</strong> is how we catch errors in data before they cause problems <sup className="font-bold text-xs">[1]</sup>. 
+              <strong>Cyclic Redundancy Check (CRC)</strong> is how we catch errors in data before they cause problems (Stallings, 2013). 
               When you send data over a network or write it to a hard drive, bits can flip — 
               maybe from electrical noise, a scratched disk, or interference on the wire. CRC is our quality-control checkpoint 
               that tells us if the data got corrupted.
@@ -35,7 +35,7 @@ const Introduction = () => {
 
             <p className="text-gray-700">
               Under the hood, CRC uses polynomial division on binary data — kind of like long division you learned in school, 
-              but with XOR operations instead of subtraction. The remainder from that division becomes our "check value" 
+              but with XOR operations instead of subtraction (Stallings, 2013). The remainder from that division becomes our "check value" 
               that travels with the data.
             </p>
           </div>
@@ -50,7 +50,7 @@ const Introduction = () => {
             </div>
             
             <p className="text-gray-700 mb-4">
-              We use CRC everywhere because it hits the sweet spot between reliability and efficiency <sup className="font-bold text-xs">[1]</sup>:
+              We use CRC everywhere because it hits the sweet spot between reliability and efficiency (Stallings, 2013; Newton, 2007):
             </p>
 
             <ul className="list-disc list-inside space-y-2 text-gray-700 mb-4">
@@ -79,16 +79,16 @@ const Introduction = () => {
             <h2 className="text-2xl font-bold text-gray-800 mb-4">Brief History</h2>
             
             <p className="text-gray-700 mb-4">
-              CRC showed up in 1961 when engineers needed a reliable way to catch transmission errors. 
+              CRC showed up in 1961 when engineers needed a reliable way to catch transmission errors (Newton, 2007). 
               Back then, data lines were noisy and unreliable — think telegraph-era tech trying to handle computer data. 
-              As networks exploded in the '70s and '80s, CRC became the go-to standard because it just worked.
+              As networks exploded in the '70s and '80s, CRC became the go-to standard because it just worked (Stallings, 2013).
             </p>
 
             <div className="bg-gray-50 rounded-lg p-4">
               <h3 className="font-semibold mb-2 text-gray-800">Key Milestones:</h3>
               <ul className="space-y-2 text-gray-700">
                 <li><strong>1961:</strong> CRC algorithm developed — engineers needed error detection for early data links</li>
-                <li><strong>1980s:</strong> Ethernet (IEEE 802.3) adopted CRC-32 — became the backbone of office networks</li>
+                <li><strong>1980s:</strong> Ethernet (IEEE 802.3) adopted CRC-32 — became the backbone of office networks (IEEE Standards Association, 2018)</li>
                 <li><strong>Today:</strong> Built into almost every digital communication protocol you can think of</li>
               </ul>
             </div>
@@ -101,9 +101,9 @@ const Introduction = () => {
             <h2 className="text-2xl font-bold text-gray-800 mb-4">Detection vs. Correction</h2>
             
             <p className="text-gray-700 mb-4">
-              Here's the key thing: CRC can <strong>detect</strong> errors, but it can't <strong>fix</strong> them. 
+              Here's the key thing: CRC can <strong>detect</strong> errors, but it can't <strong>fix</strong> them (Stallings, 2013). 
               Think of it like a smoke detector — it tells you there's a problem, but it doesn't put out the fire. 
-              When CRC catches an error, the system typically just asks for a retransmission.
+              When CRC catches an error, the system typically just asks for a retransmission (Cisco Systems, 2024).
             </p>
 
             <div className="grid md:grid-cols-2 gap-4">
