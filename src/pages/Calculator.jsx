@@ -13,6 +13,8 @@ const Calculator = () => {
     { name: 'CRC-4', generator: '10011' },
     { name: 'CRC-5-USB', generator: '100101' },
     { name: 'CRC-8', generator: '100000111' },
+    { name: 'CRC-16', generator: '11000000000000101' },
+    { name: 'CRC-32', generator: '100000100110000010001110110110111' },
   ];
 
   const [selectedPreset, setSelectedPreset] = useState('CRC-3');
@@ -185,7 +187,7 @@ const Calculator = () => {
               <label className="block text-sm font-semibold text-gray-700 mb-2">
                 Generator Polynomial Preset
               </label>
-              <div className="grid grid-cols-2 md:grid-cols-5 gap-2">
+              <div className="grid grid-cols-2 md:grid-cols-6 gap-2">
                 {presets.map((preset) => (
                   <button
                     key={preset.name}
@@ -323,12 +325,11 @@ const Calculator = () => {
           <div className="card">
             <h2 className="text-2xl font-bold text-gray-800 mb-6">Try These Examples</h2>
             
-            <div className="grid md:grid-cols-2 gap-6">
-              <div className="bg-gray-50 rounded-lg p-4">
-                <h3 className="font-semibold text-gray-800 mb-2">Simple Example</h3>
+            <div className="grid md:grid-cols-3 gap-4">
+              <div className="border-2 border-gray-200 rounded-lg p-4 hover:border-fhsu-gold transition-colors">
+                <h3 className="font-semibold text-gray-800 mb-2">CRC-3 Basic</h3>
                 <p className="text-sm text-gray-600 mb-3">
-                  Data: <span className="font-mono">1101</span><br />
-                  Generator: <span className="font-mono">1011</span> (CRC-3)
+                  <span className="font-mono">1101</span> / <span className="font-mono">1011</span>
                 </p>
                 <button
                   onClick={() => {
@@ -339,53 +340,68 @@ const Calculator = () => {
                   }}
                   className="text-fhsu-gold hover:text-fhsu-gold-dark font-semibold text-sm cursor-pointer hover:underline"
                 >
-                  Load Example →
+                  Load →
                 </button>
               </div>
 
-              <div className="bg-gray-50 rounded-lg p-4">
-                <h3 className="font-semibold text-gray-800 mb-2">Longer Data</h3>
+              <div className="border-2 border-gray-200 rounded-lg p-4 hover:border-fhsu-gold transition-colors">
+                <h3 className="font-semibold text-gray-800 mb-2">CRC-8</h3>
                 <p className="text-sm text-gray-600 mb-3">
-                  Data: <span className="font-mono">11010011</span><br />
-                  Generator: <span className="font-mono">1011</span> (CRC-3)
+                  <span className="font-mono">11010011</span> / <span className="font-mono">100000111</span>
                 </p>
                 <button
                   onClick={() => {
                     setData('11010011');
-                    setGenerator('1011');
-                    setSelectedPreset('CRC-3');
+                    setGenerator('100000111');
+                    setSelectedPreset('CRC-8');
                     window.scrollTo({ top: 0, behavior: 'smooth' });
                   }}
                   className="text-fhsu-gold hover:text-fhsu-gold-dark font-semibold text-sm cursor-pointer hover:underline"
                 >
-                  Load Example →
+                  Load →
                 </button>
               </div>
 
-              <div className="bg-gray-50 rounded-lg p-4">
-                <h3 className="font-semibold text-gray-800 mb-2">CRC-4 Example</h3>
+              <div className="border-2 border-gray-200 rounded-lg p-4 hover:border-fhsu-gold transition-colors">
+                <h3 className="font-semibold text-gray-800 mb-2">CRC-16 (USB/Modbus)</h3>
                 <p className="text-sm text-gray-600 mb-3">
-                  Data: <span className="font-mono">1101</span><br />
-                  Generator: <span className="font-mono">10011</span> (CRC-4)
+                  <span className="font-mono">1101001110110101</span> / <span className="font-mono">11000000000000101</span>
                 </p>
                 <button
                   onClick={() => {
-                    setData('1101');
-                    setGenerator('10011');
-                    setSelectedPreset('CRC-4');
+                    setData('1101001110110101');
+                    setGenerator('11000000000000101');
+                    setSelectedPreset('CRC-16');
                     window.scrollTo({ top: 0, behavior: 'smooth' });
                   }}
                   className="text-fhsu-gold hover:text-fhsu-gold-dark font-semibold text-sm cursor-pointer hover:underline"
                 >
-                  Load Example →
+                  Load →
                 </button>
               </div>
 
-              <div className="bg-gray-50 rounded-lg p-4">
-                <h3 className="font-semibold text-gray-800 mb-2">USB CRC-5</h3>
+              <div className="border-2 border-gray-200 rounded-lg p-4 hover:border-fhsu-gold transition-colors">
+                <h3 className="font-semibold text-gray-800 mb-2">CRC-32 (Ethernet)</h3>
                 <p className="text-sm text-gray-600 mb-3">
-                  Data: <span className="font-mono">11010</span><br />
-                  Generator: <span className="font-mono">100101</span> (CRC-5-USB)
+                  <span className="font-mono">11010011101101011010011110110101</span>
+                </p>
+                <button
+                  onClick={() => {
+                    setData('11010011101101011010011110110101');
+                    setGenerator('100000100110000010001110110110111');
+                    setSelectedPreset('CRC-32');
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                  }}
+                  className="text-fhsu-gold hover:text-fhsu-gold-dark font-semibold text-sm cursor-pointer hover:underline"
+                >
+                  Load →
+                </button>
+              </div>
+
+              <div className="border-2 border-gray-200 rounded-lg p-4 hover:border-fhsu-gold transition-colors">
+                <h3 className="font-semibold text-gray-800 mb-2">CRC-5 USB</h3>
+                <p className="text-sm text-gray-600 mb-3">
+                  <span className="font-mono">11010</span> / <span className="font-mono">100101</span>
                 </p>
                 <button
                   onClick={() => {
@@ -396,7 +412,25 @@ const Calculator = () => {
                   }}
                   className="text-fhsu-gold hover:text-fhsu-gold-dark font-semibold text-sm cursor-pointer hover:underline"
                 >
-                  Load Example →
+                  Load →
+                </button>
+              </div>
+
+              <div className="border-2 border-gray-200 rounded-lg p-4 hover:border-fhsu-gold transition-colors">
+                <h3 className="font-semibold text-gray-800 mb-2">CRC-4</h3>
+                <p className="text-sm text-gray-600 mb-3">
+                  <span className="font-mono">1101</span> / <span className="font-mono">10011</span>
+                </p>
+                <button
+                  onClick={() => {
+                    setData('1101');
+                    setGenerator('10011');
+                    setSelectedPreset('CRC-4');
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                  }}
+                  className="text-fhsu-gold hover:text-fhsu-gold-dark font-semibold text-sm cursor-pointer hover:underline"
+                >
+                  Load →
                 </button>
               </div>
             </div>

@@ -36,37 +36,26 @@ const References = () => {
           </div>
         </section>
 
-        {/* Design Attribution */}
+        {/* Additional Notes */}
         <section className="mb-12">
           <div className="bg-white rounded-lg shadow-md p-8">
-            <h2 className="text-2xl font-bold text-gray-800 mb-4">Design Attribution</h2>
-            <p className="text-gray-700">
-              The color scheme and visual style of this website are based on the Fort Hays State University (FHSU) brand guidelines. 
-              The primary colors—FHSU Black (#000000) and Tiger Gold (#F6BE00)—along with the typography choices (Montserrat for headings, Open Sans for body text) 
-              were adapted from the official FHSU website (<a href="https://www.fhsu.edu" target="_blank" rel="noopener noreferrer" className="text-fhsu-gold hover:underline">https://www.fhsu.edu</a>) 
-              to maintain institutional brand consistency.
-            </p>
-          </div>
-        </section>
-
-        {/* Development Stack */}
-        <section className="mb-12">
-          <div className="bg-white rounded-lg shadow-md p-8">
-            <h2 className="text-2xl font-bold text-gray-800 mb-4">Development Stack</h2>
-            <p className="text-gray-700 mb-4">
-              This educational website was built using modern web development technologies:
-            </p>
-            <ul className="list-disc list-inside space-y-2 text-gray-700 ml-4">
-              <li><strong>React</strong> - JavaScript library for building the user interface</li>
-              <li><strong>React Router</strong> - Client-side routing for navigation between pages</li>
-              <li><strong>Tailwind CSS</strong> - Utility-first CSS framework for styling</li>
-              <li><strong>Vite</strong> - Build tool and development server</li>
-              <li><strong>Lucide React</strong> - Icon library for UI elements</li>
-              <li><strong>GitHub Pages</strong> - Hosting platform for deployment</li>
-            </ul>
-            <p className="text-gray-700 mt-4">
-              The source code is version-controlled using Git and hosted on GitHub, enabling collaborative development and continuous deployment.
-            </p>
+            <h2 className="text-2xl font-bold text-gray-800 mb-4">Additional Notes</h2>
+            
+            <div className="space-y-4 text-gray-700">
+              <div>
+                <h3 className="font-semibold mb-1">Design Attribution</h3>
+                <p className="text-sm">
+                  Color scheme and typography based on Fort Hays State University brand guidelines (<a href="https://www.fhsu.edu" target="_blank" rel="noopener noreferrer" className="text-fhsu-gold hover:underline">fhsu.edu</a>).
+                </p>
+              </div>
+              
+              <div>
+                <h3 className="font-semibold mb-1">Development Stack</h3>
+                <p className="text-sm">
+                  Built with React, React Router, Tailwind CSS, Vite, and Lucide React. Hosted on GitHub Pages.
+                </p>
+              </div>
+            </div>
           </div>
         </section>
 
