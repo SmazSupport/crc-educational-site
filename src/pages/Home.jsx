@@ -9,7 +9,7 @@ const Home = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
           <div className="text-center">
             <h1 style={{color: '#ffffff'}} className="text-5xl md:text-6xl font-bold mb-6">
-              Catching Data Errors with CRC
+              CRC Error Checking
             </h1>
             <p style={{color: '#ffffff'}} className="text-xl md:text-2xl mb-4">
               How Networks Keep Your Data Intact
@@ -27,7 +27,7 @@ const Home = () => {
                 <strong>Course:</strong> INF680 - Data and Computer Communications
               </p>
               <p style={{color: '#ffffff'}} className="text-lg">
-                <strong>Date:</strong> October 2025
+                <strong>Date:</strong> 10/29/25
               </p>
             </div>
 
@@ -162,60 +162,6 @@ const Home = () => {
         </div>
       </div>
 
-      {/* Navigation Section */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          <Link to="/introduction" className="card hover:border-fhsu-gold border-2 border-transparent transition-all">
-            <h3 className="text-xl font-semibold mb-2 text-gray-800">Introduction</h3>
-            <p className="text-gray-600 mb-4">
-              Overview of CRC error detection and its role in data integrity (Stallings, 2013; Newton, 2007).
-            </p>
-            <span className="text-fhsu-gold font-semibold inline-flex items-center">
-              Learn More <ArrowRight className="ml-2" size={16} />
-            </span>
-          </Link>
-
-          <Link to="/how-it-works" className="card hover:border-fhsu-gold border-2 border-transparent transition-all">
-            <h3 className="text-xl font-semibold mb-2 text-gray-800">How It Works</h3>
-            <p className="text-gray-600 mb-4">
-              Technical process of CRC calculation with examples (Koopman, 2024).
-            </p>
-            <span className="text-fhsu-gold font-semibold inline-flex items-center">
-              Learn More <ArrowRight className="ml-2" size={16} />
-            </span>
-          </Link>
-
-          <Link to="/applications" className="card hover:border-fhsu-gold border-2 border-transparent transition-all">
-            <h3 className="text-xl font-semibold mb-2 text-gray-800">Applications</h3>
-            <p className="text-gray-600 mb-4">
-              Practical uses in networking and storage systems (IEEE Standards Association, 2018; Cisco Systems, 2024).
-            </p>
-            <span className="text-fhsu-gold font-semibold inline-flex items-center">
-              Learn More <ArrowRight className="ml-2" size={16} />
-            </span>
-          </Link>
-
-          <Link to="/calculator" className="card hover:border-fhsu-gold border-2 border-transparent transition-all">
-            <h3 className="text-xl font-semibold mb-2 text-gray-800">CRC Calculator</h3>
-            <p className="text-gray-600 mb-4">
-              Interactive calculator demonstrating the CRC process step-by-step.
-            </p>
-            <span className="text-fhsu-gold font-semibold inline-flex items-center">
-              Try It <ArrowRight className="ml-2" size={16} />
-            </span>
-          </Link>
-
-          <Link to="/references" className="card hover:border-fhsu-gold border-2 border-transparent transition-all">
-            <h3 className="text-xl font-semibold mb-2 text-gray-800">References</h3>
-            <p className="text-gray-600 mb-4">
-              All the technical references and standards cited throughout this site.
-            </p>
-            <span className="text-fhsu-gold font-semibold inline-flex items-center">
-              View Sources <ArrowRight className="ml-2" size={16} />
-            </span>
-          </Link>
-        </div>
-      </div>
     </div>
   );
 };

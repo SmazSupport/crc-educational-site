@@ -13,7 +13,7 @@ const Footer = () => {
               <strong className="text-fhsu-gold">Course:</strong> INF680 - Data Communications
             </p>
             <p className="text-sm mb-2">
-              <strong className="text-fhsu-gold">Date:</strong> October 2025
+              <strong className="text-fhsu-gold">Date:</strong> 10/29/25
             </p>
             <p className="text-sm">
               <strong className="text-fhsu-gold">Topic:</strong> CRC Error Checking Methodology

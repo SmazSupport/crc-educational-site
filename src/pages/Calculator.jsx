@@ -9,7 +9,6 @@ const Calculator = () => {
 
   // Presets for common CRC polynomials
   const presets = [
-    { name: 'Custom', generator: '' },
     { name: 'CRC-3', generator: '1011' },
     { name: 'CRC-4', generator: '10011' },
     { name: 'CRC-5-USB', generator: '100101' },

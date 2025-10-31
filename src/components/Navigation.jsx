@@ -27,7 +27,7 @@ const Navigation = () => {
                 <span className="text-black font-bold text-xl">CRC</span>
               </div>
               <span className="font-bold text-xl text-gray-800 hidden sm:block">
-                CRC Learning Hub
+                Error Checking
               </span>
             </Link>
           </div>
