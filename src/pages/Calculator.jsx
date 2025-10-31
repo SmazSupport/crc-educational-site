@@ -103,7 +103,7 @@ const Calculator = () => {
       // Create detailed XOR breakdown
       let xorBreakdown = '';
       for (let i = 0; i < generator.length; i++) {
-        xorBreakdown += `${segment[i]} ⊕ ${generator[i]} = ${xorResult[i]}\n`;
+        xorBreakdown += `${segment[i]} XOR ${generator[i]} = ${xorResult[i]}\n`;
       }
       
       const oldDividend = dividend;
@@ -111,7 +111,7 @@ const Calculator = () => {
 
       calculationSteps.push({
         step: `Step ${stepNumber}: XOR Operation at Position ${position}`,
-        description: `Align the generator with the leftmost "1" at position ${position}. Perform XOR (exclusive OR) bit by bit. Remember: 0⊕0=0, 0⊕1=1, 1⊕0=1, 1⊕1=0`,
+        description: `Align the generator with the leftmost "1" at position ${position}. Perform XOR (exclusive OR) bit by bit. Remember: 0 XOR 0 = 0, 0 XOR 1 = 1, 1 XOR 0 = 1, 1 XOR 1 = 0`,
         math: `Segment:   ${segment}\nGenerator: ${generator}\n${'─'.repeat(generator.length)}\nResult:    ${xorResult}`,
         xorBreakdown: xorBreakdown.trim(),
         value: dividend,
