@@ -38,7 +38,7 @@ const Calculator = () => {
     return result;
   };
 
-  // Perform CRC calculation with step-by-step tracking
+  // Perform CRC calculation with detailed step-by-step tracking
   const calculateCRC = () => {
     if (!isValidBinary(data)) {
       alert('Data must contain only 0s and 1s');
@@ -60,25 +60,33 @@ const Calculator = () => {
     const calculationSteps = [];
     const crcLength = generator.length - 1;
     
-    // Step 1: Append zeros
+    // Step 1: Append zeros with detailed explanation
     let augmentedData = data + '0'.repeat(crcLength);
     calculationSteps.push({
-      step: 'Append Zeros',
-      description: `Append ${crcLength} zeros to data`,
+      step: 'Step 1: Append Zeros',
+      description: `To calculate a ${crcLength}-bit CRC, append ${crcLength} zeros to the original data. This creates space for the CRC remainder.`,
+      math: `Original Data: ${data}\nZeros to append: ${'0'.repeat(crcLength)}\nAugmented Data: ${augmentedData}`,
       value: augmentedData,
-      highlight: data.length
+      highlight: data.length,
+      type: 'append',
+      original: data,
+      appended: '0'.repeat(crcLength)
     });
 
-    // Step 2: Perform division
+    // Step 2: Perform division with detailed XOR operations
     let dividend = augmentedData;
     let position = 0;
+    let stepNumber = 2;
 
     calculationSteps.push({
-      step: 'Start Division',
-      description: 'Begin XOR division process',
+      step: `Step ${stepNumber}: Initialize Division`,
+      description: 'We will now perform polynomial division using XOR operations. We align the generator with the leftmost "1" bit and XOR.',
+      math: `Dividend: ${dividend}\nGenerator: ${generator}\nDegree of generator: ${generator.length - 1}`,
       value: dividend,
-      highlight: 0
+      highlight: 0,
+      type: 'init'
     });
+    stepNumber++;
 
     while (position <= dividend.length - generator.length) {
       // Find next 1
@@ -88,31 +96,59 @@ const Calculator = () => {
 
       if (position > dividend.length - generator.length) break;
 
-      // Perform XOR
+      // Perform XOR with detailed explanation
       const segment = dividend.substring(position, position + generator.length);
       const xorResult = xorBinary(segment, generator);
       
+      // Create detailed XOR breakdown
+      let xorBreakdown = '';
+      for (let i = 0; i < generator.length; i++) {
+        xorBreakdown += `${segment[i]} ⊕ ${generator[i]} = ${xorResult[i]}\n`;
+      }
+      
+      const oldDividend = dividend;
       dividend = dividend.substring(0, position) + xorResult + dividend.substring(position + generator.length);
 
       calculationSteps.push({
-        step: `XOR at position ${position}`,
-        description: `${segment} XOR ${generator} = ${xorResult}`,
+        step: `Step ${stepNumber}: XOR Operation at Position ${position}`,
+        description: `Align the generator with the leftmost "1" at position ${position}. Perform XOR (exclusive OR) bit by bit. Remember: 0⊕0=0, 0⊕1=1, 1⊕0=1, 1⊕1=0`,
+        math: `Segment:   ${segment}\nGenerator: ${generator}\n${'─'.repeat(generator.length)}\nResult:    ${xorResult}`,
+        xorBreakdown: xorBreakdown.trim(),
         value: dividend,
-        highlight: position
+        oldValue: oldDividend,
+        highlight: position,
+        type: 'xor',
+        segment: segment,
+        xorResult: xorResult,
+        position: position
       });
 
+      stepNumber++;
       position++;
     }
 
-    // Extract CRC (last n bits)
+    // Extract CRC with detailed explanation
     const crc = dividend.slice(-crcLength);
     const transmittedData = data + crc;
 
     calculationSteps.push({
-      step: 'Extract CRC',
-      description: `CRC checksum is the last ${crcLength} bits`,
+      step: `Step ${stepNumber}: Extract CRC Remainder`,
+      description: `The division is complete. The CRC checksum is the last ${crcLength} bits of the final result. This is the remainder of the polynomial division.`,
+      math: `Final dividend: ${dividend}\nCRC (last ${crcLength} bits): ${crc}`,
       value: crc,
-      highlight: 0
+      highlight: 0,
+      type: 'extract',
+      fullDividend: dividend
+    });
+
+    calculationSteps.push({
+      step: `Step ${stepNumber + 1}: Form Transmitted Data`,
+      description: `Append the CRC checksum to the original data. This is what will be transmitted. The receiver can verify the data by performing the same CRC calculation.`,
+      math: `Original Data: ${data}\nCRC Checksum: ${crc}\nTransmitted Data: ${transmittedData}`,
+      value: transmittedData,
+      type: 'final',
+      original: data,
+      crc: crc
     });
 
     setSteps(calculationSteps);
@@ -277,25 +313,79 @@ const Calculator = () => {
               </div>
             </div>
 
-            {/* Step-by-Step */}
+            {/* Step-by-Step with Detailed Math */}
             <div className="card">
-              <h2 className="text-2xl font-bold text-gray-800 mb-6">Step-by-Step Process</h2>
+              <h2 className="text-2xl font-bold text-gray-800 mb-6">Detailed Step-by-Step Calculation</h2>
+              <p className="text-gray-600 mb-6">
+                Follow along with the mathematical process of CRC calculation. Each step shows the binary operations and explains what's happening.
+              </p>
               
-              <div className="space-y-4">
+              <div className="space-y-6">
                 {steps.map((step, index) => (
-                  <div key={index} className="bg-gray-50 rounded-lg p-4 border-l-4 border-primary-600">
-                    <div className="flex items-start justify-between mb-2">
-                      <div>
-                        <span className="inline-block bg-primary-600 text-white text-xs font-bold px-2 py-1 rounded">
-                          Step {index + 1}
-                        </span>
-                        <h3 className="font-semibold text-gray-800 mt-2">{step.step}</h3>
+                  <div key={index} className="bg-gray-50 rounded-lg p-5 border-l-4 border-primary-600">
+                    <div className="mb-3">
+                      <span className="inline-block bg-primary-600 text-white text-xs font-bold px-3 py-1 rounded">
+                        {step.step}
+                      </span>
+                    </div>
+                    
+                    <p className="text-gray-700 mb-4 leading-relaxed">{step.description}</p>
+                    
+                    {/* Mathematical Notation */}
+                    {step.math && (
+                      <div className="bg-white rounded-lg p-4 mb-4 border border-gray-200">
+                        <p className="text-xs font-semibold text-gray-500 mb-2">MATHEMATICAL REPRESENTATION:</p>
+                        <pre className="font-mono text-sm text-gray-800 whitespace-pre-wrap">{step.math}</pre>
                       </div>
-                    </div>
-                    <p className="text-sm text-gray-600 mb-2">{step.description}</p>
-                    <div className="bg-white rounded p-3 font-mono text-lg overflow-x-auto">
-                      {step.value}
-                    </div>
+                    )}
+                    
+                    {/* XOR Breakdown for XOR steps */}
+                    {step.xorBreakdown && (
+                      <div className="bg-blue-50 rounded-lg p-4 mb-4 border border-blue-200">
+                        <p className="text-xs font-semibold text-blue-700 mb-2">BIT-BY-BIT XOR OPERATION:</p>
+                        <pre className="font-mono text-sm text-gray-800 whitespace-pre-wrap">{step.xorBreakdown}</pre>
+                        <p className="text-xs text-gray-600 mt-2 italic">
+                          Remember: XOR returns 1 when bits are different, 0 when they're the same
+                        </p>
+                      </div>
+                    )}
+                    
+                    {/* Visual representation for append step */}
+                    {step.type === 'append' && (
+                      <div className="bg-white rounded-lg p-4 border border-gray-200">
+                        <div className="font-mono text-lg">
+                          <span className="text-gray-800">{step.original}</span>
+                          <span className="text-primary-600 font-bold">{step.appended}</span>
+                        </div>
+                        <p className="text-xs text-gray-500 mt-2">
+                          Original data in black, appended zeros in gold
+                        </p>
+                      </div>
+                    )}
+                    
+                    {/* Visual representation for final step */}
+                    {step.type === 'final' && (
+                      <div className="bg-gradient-to-r from-green-50 to-emerald-50 rounded-lg p-4 border-2 border-green-500">
+                        <p className="text-sm font-semibold text-gray-700 mb-2">Transmitted Data:</p>
+                        <div className="font-mono text-2xl">
+                          <span className="text-gray-800">{step.original}</span>
+                          <span className="text-green-600 font-bold">{step.crc}</span>
+                        </div>
+                        <p className="text-xs text-gray-600 mt-2">
+                          Original data + CRC checksum (in green)
+                        </p>
+                      </div>
+                    )}
+                    
+                    {/* Current value display for other steps */}
+                    {step.type !== 'append' && step.type !== 'final' && (
+                      <div className="bg-white rounded-lg p-4 border border-gray-200">
+                        <p className="text-xs font-semibold text-gray-500 mb-2">CURRENT VALUE:</p>
+                        <div className="font-mono text-lg text-gray-800 overflow-x-auto break-all">
+                          {step.value}
+                        </div>
+                      </div>
+                    )}
                   </div>
                 ))}
               </div>
